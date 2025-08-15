@@ -99,20 +99,21 @@ const Home = () => {
       className="min-h-screen px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: "#2B2B2B" }}
     >
-      <section className="max-w-7xl mx-auto py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mx-8">
+      <section className="max-w-7xl mx-auto py-8 lg:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center mx-8">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
-              Discover
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+              Discover to
               <br />
-              Digital Art &<br />
-              Collect NFTs
+              Connect,Calm &
+              <br />
+              Recharge
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-md mx-auto lg:mx-0 mb-8 leading-relaxed">
-              NFT Marketplace UI Created With Anima For Figma. Collect, Buy And
-              Sell Art From More Than 20k NFT Artists.
+              Your personal emotional support platform. Start your journey to
+              mindfulness and emotional wellness today.
             </p>
 
             <button className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200 flex items-center space-x-3 mx-auto lg:mx-0 mb-12">
@@ -121,7 +122,7 @@ const Home = () => {
             </button>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0">
+            {/*             <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0">
               <div className="text-center lg:text-left">
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
                   240k+
@@ -146,7 +147,7 @@ const Home = () => {
                   Artists
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - NFT Card */}
