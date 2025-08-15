@@ -9,11 +9,10 @@ import About from "./Pages/About";
 import Psychiatrist from "./Pages/Psychiatrist";
 
 import Home from "./Pages/Home";
-import Yoga from "./Pages/Yoga"
+import Yoga from "./Pages/Yoga";
 const App = () => {
   return (
     <Router>
-
       {/* <Navbar /> */}
       <Routes>
         <Route element={<Layout />}>
@@ -24,8 +23,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           {/* Add more routes as needed */}
 
-          <Route path="/yoga-wellness" element={<Yoga />} />
-
+          <Route path="/yoga" element={<Yoga />} />
         </Route>
       </Routes>
     </Router>
