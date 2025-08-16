@@ -209,11 +209,12 @@ const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // 👇 aligned with backend fields
   const [signupData, setSignupData] = useState({
-    fullName: "",
+    fullname: "",
     country: "",
     email: "",
-    phoneNumber: "",
+    phoneNo: "",
     gender: "",
     password: "",
   });
@@ -226,25 +227,16 @@ const Signup = () => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
-    if (signupData.password !== signupData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
     try {
-      // Backend should return { user, token }
       const { data } = await axios.post(`${BASE_URL}/auth/signup`, signupData);
 
-      // Store in Redux + localStorage via authSlice
-      dispatch(setCredentials({ user: data.user, token: data.token }));
+      dispatch(setCredentials({ user: data, token: data.token }));
 
       alert("Signup successful!");
-      navigate("/dashboard"); // or wherever you want to redirect
+      navigate("/login"); // redirect after signup
     } catch (error) {
       console.error(error);
-      alert(
-        error.response?.data?.message || "Signup failed! Please try again."
-      );
+      alert(error.response?.data?.message || "Signup failed! Please try again.");
     }
   };
 
@@ -264,62 +256,54 @@ const Signup = () => {
             </p>
 
             <form onSubmit={handleSignupSubmit} className="space-y-4">
-              {/* Full Name */}
-              <div className="relative">
-                <input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={signupData.fullName}
-                  onChange={handleSignupChange}
-                  required
-                  className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
-                />
-              </div>
+              {/* Fullname */}
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                value={signupData.fullname}
+                onChange={handleSignupChange}
+                required
+                className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
+              />
 
               {/* Country */}
-              <div className="relative">
-                <select
-                  name="country"
-                  value={signupData.country}
-                  onChange={handleSignupChange}
-                  required
-                  className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
-                >
-                  <option value="">Select Country</option>
-                  {countries.map((country, index) => (
-                    <option key={index} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <select
+                name="country"
+                value={signupData.country}
+                onChange={handleSignupChange}
+                required
+                className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
+              >
+                <option value="">Select Country</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
 
               {/* Email */}
-              <div className="relative">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={signupData.email}
-                  onChange={handleSignupChange}
-                  required
-                  className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
-                />
-              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={signupData.email}
+                onChange={handleSignupChange}
+                required
+                className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
+              />
 
               {/* Phone Number */}
-              <div className="relative">
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  value={signupData.phoneNumber}
-                  onChange={handleSignupChange}
-                  required
-                  className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
-                />
-              </div>
+              <input
+                type="tel"
+                name="phoneNo"
+                placeholder="Phone Number"
+                value={signupData.phoneNo}
+                onChange={handleSignupChange}
+                required
+                className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
+              />
 
               {/* Gender */}
               <div className="pt-2">
@@ -327,7 +311,7 @@ const Signup = () => {
                   Gender
                 </span>
                 <div className="flex items-center space-x-6 mt-2">
-                  {["male", "female", "other"].map((g) => (
+                  {["Male", "Female", "Other"].map((g) => (
                     <label
                       key={g}
                       className="flex items-center text-gray-700 dark:text-gray-300"
@@ -340,24 +324,22 @@ const Signup = () => {
                         onChange={handleSignupChange}
                         className="form-radio h-4 w-4 text-violet-600"
                       />
-                      <span className="ml-2 capitalize">{g}</span>
+                      <span className="ml-2">{g}</span>
                     </label>
                   ))}
                 </div>
               </div>
 
               {/* Password */}
-              <div className="relative">
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  value={signupData.password}
-                  onChange={handleSignupChange}
-                  required
-                  className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
-                />
-              </div>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={signupData.password}
+                onChange={handleSignupChange}
+                required
+                className="w-full pl-4 pr-4 py-2 bg-gray-100 dark:bg-[#2d2d2d] border rounded-lg focus:ring-2 focus:ring-violet-500 text-gray-800 dark:text-white"
+              />
 
               {/* Submit */}
               <button
