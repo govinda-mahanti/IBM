@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { setCredentials } from "../redux/authSlice";
 import { BASE_URL } from "../config/urlConfig";
+
 const Login = () => {
   const [loginData, setLoginData] = useState({
     email: "",
@@ -23,8 +24,16 @@ const Login = () => {
     try {
       const { data } = await axios.post(`${BASE_URL}/auth/login`, loginData);
 
-      if (data?.token && data?.user) {
-        dispatch(setCredentials({ user: data.user, token: data.token }));
+      if (data?.token) {
+        // 👇 build user object from backend response
+        const user = {
+          _id: data._id,
+          fullname: data.fullname,
+          email: data.email,
+        };
+
+        dispatch(setCredentials({ user, token: data.token }));
+
         alert("Login successful!");
         navigate("/dashboard");
       } else {
@@ -37,7 +46,7 @@ const Login = () => {
 
   return (
     <div
-      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center "
+      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center"
       style={{ backgroundColor: "#2B2B2B" }}
     >
       <div className="w-full max-w-md">
@@ -51,6 +60,7 @@ const Login = () => {
             </p>
 
             <form onSubmit={handleLoginSubmit} className="space-y-6">
+              {/* Email */}
               <div className="relative">
                 <input
                   type="email"
@@ -63,6 +73,7 @@ const Login = () => {
                 />
               </div>
 
+              {/* Password */}
               <div className="relative">
                 <input
                   type="password"
@@ -84,6 +95,7 @@ const Login = () => {
             </form>
           </div>
 
+          {/* Footer */}
           <div className="p-4 text-center bg-gray-50 dark:bg-[#252525]">
             <span className="text-gray-600 dark:text-gray-300">
               Don&apos;t have an account?
