@@ -1,6 +1,3 @@
-import React from "react";
-import { Menu, X, User } from "lucide-react";
-import { useState } from "react";
 import {
   Settings,
   Headphones,
@@ -8,7 +5,8 @@ import {
   CheckCircle,
   ExternalLink,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+
+import Characters from "../Components/Characters";
 const Persona = () => {
   const openGoogleDrive = () => {
     // Replace with your specific Google Drive folder/file URL
@@ -17,18 +15,12 @@ const Persona = () => {
     window.open(googleDriveUrl, "_blank");
   };
 
-  const goBack = () => {
-    // Replace with your routing logic
-    window.history.back();
-    // or use: navigate(-1) for React Router
-  };
-
   return (
     <div
       className="min-h-screen px-4 sm:px-6 lg:px-4"
       style={{ backgroundColor: "#2B2B2B" }}
     >
-      <section className="max-w-7xl mx-auto py-12 lg:py-16">
+      <section className="max-w-6xl mx-auto py-12 lg:py-16">
         {/* Header */}
         <div className="text-center mb-12">
           <img
@@ -44,7 +36,7 @@ const Persona = () => {
             designed for your mental wellness journey.
           </p>
         </div>
-
+        <Characters />
         {/* VR Setup Guide */}
         <div
           className=" rounded-2xl p-8 mb-8"
