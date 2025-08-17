@@ -63,29 +63,20 @@ const Home = () => {
       question: "Do I need a VR headset?",
       answer: "No. VR is optional—works on any smartphone, tablet, or desktop.",
     },
+
     {
-      question: "Can I book licensed professionals?",
+      question:
+        "What is included for free, and what’s limited in the basic plan?",
       answer:
-        "Yes. All therapists and psychiatrists are certified and verified.",
+        "Enjoy free access to all basic features, with AR/VR sessions limited to 1 hour. Upgrade to premium for unlimited classes, exclusive VR content, and priority bookings.",
     },
     {
       question: "Is my data secure?",
-      answer:
-        "Yes. We use end-to-end encryption and follow HIPAA/GDPR standards.",
+      answer: "Yes. We use end-to-end encryption and security standards.",
     },
     {
       question: "Do I need prior experience in yoga or meditation?",
       answer: "No. We have beginner to advanced level sessions.",
-    },
-    {
-      question: "Can I use the app offline?",
-      answer:
-        "Yes, you can download yoga & meditation sessions. Live consultations need internet.",
-    },
-    {
-      question: "What’s the cost?",
-      answer:
-        "Free basic access, with premium plans for unlimited classes, VR content, and priority bookings.",
     },
   ];
 
@@ -116,38 +107,15 @@ const Home = () => {
               mindfulness and emotional wellness today.
             </p>
 
-            <button className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200 flex items-center space-x-3 mx-auto lg:mx-0 mb-12">
+            <button
+              onClick={() => {
+                window.location.href = "/signup";
+              }}
+              className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors duration-200 flex items-center space-x-3 mx-auto lg:mx-0 mb-12"
+            >
               <Rocket size={20} />
               <span>Get Started</span>
             </button>
-
-            {/* Stats */}
-            {/*             <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0">
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
-                  240k+
-                </div>
-                <div className="text-gray-400 text-sm sm:text-base">
-                  Total Sale
-                </div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
-                  100k+
-                </div>
-                <div className="text-gray-400 text-sm sm:text-base">
-                  Auctions
-                </div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1">
-                  240k+
-                </div>
-                <div className="text-gray-400 text-sm sm:text-base">
-                  Artists
-                </div>
-              </div>
-            </div> */}
           </div>
 
           {/* Right Content - NFT Card */}
