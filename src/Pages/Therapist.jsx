@@ -22,7 +22,7 @@ const therapyServicesData = [
         description: 'Cognitive Behavioral Therapy helps identify and change negative thought patterns and behaviors.',
         borderColor: 'border-purple-500',
         iconClassName: 'text-purple-400',
-        link: '/services/cbt-bot'
+        link: 'https://cbt-cognitive-behavioural-therapy.onrender.com'
     },
     {
         icon: Zap,
@@ -30,7 +30,7 @@ const therapyServicesData = [
         description: 'Dialectical Behavior Therapy focuses on developing coping skills and emotional regulation.',
         borderColor: 'border-purple-500',
         iconClassName: 'text-purple-400',
-        link: '/services/dbt-bot'
+        link: 'https://interpersonal-psychotherapy-ipt.onrender.com/'
     },
     {
         icon: Leaf,
@@ -38,7 +38,7 @@ const therapyServicesData = [
         description: 'Learn mindfulness techniques to reduce stress and increase present-moment awareness.',
         borderColor: 'border-purple-500',
         iconClassName: 'text-purple-400',
-        link: '/services/mindfulness-therapy'
+        link: 'https://interpersonal-psychotherapy-ipt.onrender.com/'
     },
     {
         icon: CheckCircle,
@@ -122,7 +122,7 @@ const Therapist = () => {
   const navigate = useNavigate();
 
   const handleClick = (link) => {
-    navigate(link);
+    window.location.href = link;
   };
 
   return (
