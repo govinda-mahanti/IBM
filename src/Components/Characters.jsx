@@ -27,15 +27,16 @@ const Characters = () => {
     setShowModal(true);
   };
 
-  const handleAgree = () => {
-    setShowModal(false);
-    setShowAnimation(true);
+ const handleAgree = () => {
+  setShowModal(false);
+  setShowAnimation(true);
 
-    setTimeout(() => {
-      setShowAnimation(false);
-      alert("Conversation Started ✅"); // replace with actual navigation or chat screen
-    }, 3000);
-  };
+  setTimeout(() => {
+    setShowAnimation(false);
+    window.location.href = "https://drive.google.com/file/d/1JthZV47hNSw9wSShuS_ArQw82fu5FH8J/view?usp=sharing";
+  }, 3000);
+};
+
 
   return (
     <div className="min-h-screen p-6">

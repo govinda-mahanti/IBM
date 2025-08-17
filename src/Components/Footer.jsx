@@ -1,5 +1,6 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import logo from "../assets/logo.png";
 const Footer = () => {
   return (
     <footer
@@ -9,7 +10,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
         {/* Brand */}
         <div className="flex flex-col space-y-4">
-          <h2 className="text-2xl font-bold text-purple-400">NeuroCare</h2>
+          <div className="flex items-center">
+                      <img src={logo} alt="logo" className="w-8 mr-[5px]" />
+                      <span className="text-white font-bold text-2xl">NeuroCare</span>
+                    </div>
           <p className="text-gray-400 max-w-xs">
             NeuroCare helps you find emotional balance through VR experiences,
             therapists, psychiatrists, and mindfulness sessions.
@@ -71,7 +75,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-gray-400 mt-4 text-sm">
-            Email: support@NeuroCare.com
+            Email: support@emotvr.com
           </p>
         </div>
       </div>
@@ -81,7 +85,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-4 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} NeuroCare. All rights reserved.
+        © {new Date().getFullYear()} EMOTVR. All rights reserved.
       </div>
     </footer>
   );
