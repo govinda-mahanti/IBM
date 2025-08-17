@@ -13,6 +13,7 @@ import Home from "./Pages/Home";
 import Yoga from "./Pages/Yoga";
 import Profile from "./Pages/Profile";
 import Dashboard from "./Pages/Dashboard";
+import BrainSensorMonitor from "./Pages/Brainanalysis";
 const App = () => {
   return (
     <Router>
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/brainanalysis" element={<BrainSensorMonitor />} />
         </Route>
       </Routes>
     </Router>
