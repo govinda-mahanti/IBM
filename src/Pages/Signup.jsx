@@ -240,7 +240,9 @@ const Signup = () => {
         navigate("/");
     } catch (error) {
       console.error(error);
-      alert(error.response?.data?.message || "Signup failed! Please try again.");
+      alert(
+        error.response?.data?.message || "Signup failed! Please try again."
+      );
     }
   };
 
