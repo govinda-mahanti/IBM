@@ -96,7 +96,7 @@ const Home = () => {
   };
   return (
     <div
-      className="min-h-screen px-4 sm:px-6 lg:px-8"
+      className="min-h-screen px-4 sm:px-6 lg:px-8 pt-[64px]"
       style={{ backgroundColor: "#2B2B2B" }}
     >
       <section className="max-w-7xl mx-auto py-8 lg:py-6">

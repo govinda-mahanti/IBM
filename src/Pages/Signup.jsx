@@ -208,6 +208,8 @@ const countries = [
 const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+    const [loading, setLoading] = useState(false); 
+
 
   // 👇 aligned with backend fields
   const [signupData, setSignupData] = useState({
@@ -226,6 +228,8 @@ const Signup = () => {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
+        setLoading(true);
+
 
     try {
       const { data } = await axios.post(`${BASE_URL}/auth/signup`, signupData);
@@ -233,7 +237,7 @@ const Signup = () => {
       dispatch(setCredentials({ user: data, token: data.token }));
 
       alert("Signup successful!");
-      navigate("/login"); // redirect after signup
+        navigate("/");
     } catch (error) {
       console.error(error);
       alert(
@@ -244,7 +248,7 @@ const Signup = () => {
 
   return (
     <div
-      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center"
+      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center "
       style={{ backgroundColor: "#2B2B2B" }}
     >
       <div className="w-full max-w-md m-4">
@@ -344,11 +348,16 @@ const Signup = () => {
               />
 
               {/* Submit */}
-              <button
+               <button
                 type="submit"
-                className="w-full bg-violet-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-transform transform hover:scale-105"
+                disabled={loading} 
+                className={`w-full font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-transform transform ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-violet-600 hover:bg-violet-700 focus:ring-violet-500 text-white hover:scale-105"
+                }`}
               >
-                Sign Up
+                {loading ? "Submitting..." : "Sign Up"}
               </button>
             </form>
           </div>
