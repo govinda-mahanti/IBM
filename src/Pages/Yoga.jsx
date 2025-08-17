@@ -204,7 +204,7 @@ const Yoga = () => {
   };
 
   return (
-    <div style={styles.pageContainer} className="bg-slate-900 text-gray-300">
+    <div style={styles.pageContainer} className="bg-slate-900 text-gray-300 pt-[64px]">
       <style>{animationCSS}</style>
 
       {/* Header Section */}

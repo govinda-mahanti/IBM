@@ -13,6 +13,8 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+    const [loading, setLoading] = useState(false); 
+
 
   const handleLoginChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -20,22 +22,17 @@ const Login = () => {
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
+        setLoading(true); 
+
 
     try {
       const { data } = await axios.post(`${BASE_URL}/auth/login`, loginData);
 
       if (data?.token) {
-        // 👇 build user object from backend response
-        const user = {
-          _id: data._id,
-          fullname: data.fullname,
-          email: data.email,
-        };
-
-        dispatch(setCredentials({ user, token: data.token }));
+      dispatch(setCredentials({ user: data, token: data.token }));
 
         alert("Login successful!");
-        navigate("/dashboard");
+        navigate("/");
       } else {
         alert("Invalid login response from server.");
       }
@@ -86,11 +83,16 @@ const Login = () => {
                 />
               </div>
 
-              <button
+               <button
                 type="submit"
-                className="w-full bg-violet-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500 transition-transform transform hover:scale-105"
+                disabled={loading}
+                className={`w-full font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-transform transform ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-violet-600 hover:bg-violet-700 focus:ring-violet-500 text-white hover:scale-105"
+                }`}
               >
-                Login
+                {loading ? "Submitting..." : "Login"}
               </button>
             </form>
           </div>

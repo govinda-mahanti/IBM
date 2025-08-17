@@ -2,7 +2,7 @@ import React from "react";
 import TeamSection from "./Team";
 const About = () => {
   return (
-    <div className="bg-[#2B2B2B] text-white min-h-screen px-6 lg:px-16 py-12">
+    <div className="bg-[#2B2B2B] text-white min-h-screen px-6 lg:px-16 py-12 pt-[64px]">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h1 className="text-4xl font-bold text-purple-400 mb-6">About Us</h1>

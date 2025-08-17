@@ -126,7 +126,7 @@ const Therapist = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen font-sans">
+    <div className="bg-gray-900 min-h-screen font-sans pt-[64px]">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white">Our Therapy Services</h1>
