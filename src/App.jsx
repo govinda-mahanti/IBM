@@ -11,6 +11,7 @@ import Signup from "./Pages/Signup";
 
 import Home from "./Pages/Home";
 import Yoga from "./Pages/Yoga";
+import Profile from "./Pages/Profile";
 const App = () => {
   return (
     <Router>
@@ -20,10 +21,13 @@ const App = () => {
           <Route path="/persona" element={<Persona />} />
           <Route path="/therapist" element={<Therapist />} />
           <Route path="/psychiatrist" element={<Psychiatrist />} />
-          <Route path="/about" element={<About />} />
           <Route path="/yoga" element={<Yoga />} />
+          <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+                    <Route path="/profile" element={<Profile />} />
+
+
         </Route>
       </Routes>
     </Router>
