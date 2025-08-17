@@ -11,7 +11,7 @@ const Persona = () => {
   const openGoogleDrive = () => {
     // Replace with your specific Google Drive folder/file URL
     const googleDriveUrl =
-      "https://drive.google.com/drive/folders/your-folder-id";
+      "https://drive.google.com/file/d/1JthZV47hNSw9wSShuS_ArQw82fu5FH8J/view?usp=sharing";
     window.open(googleDriveUrl, "_blank");
   };
 
