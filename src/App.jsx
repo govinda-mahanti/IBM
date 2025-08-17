@@ -12,6 +12,7 @@ import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Yoga from "./Pages/Yoga";
 import Profile from "./Pages/Profile";
+import Dashboard from "./Pages/Dashboard";
 const App = () => {
   return (
     <Router>
@@ -25,9 +26,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-                    <Route path="/profile" element={<Profile />} />
-
-
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </Router>

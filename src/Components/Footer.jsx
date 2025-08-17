@@ -1,6 +1,5 @@
 import React from "react";
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-
 const Footer = () => {
   return (
     <footer
@@ -10,9 +9,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
         {/* Brand */}
         <div className="flex flex-col space-y-4">
-          <h2 className="text-2xl font-bold text-purple-400">EMOTVR</h2>
+          <h2 className="text-2xl font-bold text-purple-400">NeuroCare</h2>
           <p className="text-gray-400 max-w-xs">
-            EMOTVR helps you find emotional balance through VR experiences,
+            NeuroCare helps you find emotional balance through VR experiences,
             therapists, psychiatrists, and mindfulness sessions.
           </p>
         </div>
@@ -72,7 +71,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-gray-400 mt-4 text-sm">
-            Email: support@emotvr.com
+            Email: support@NeuroCare.com
           </p>
         </div>
       </div>
@@ -82,7 +81,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-4 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} EMOTVR. All rights reserved.
+        © {new Date().getFullYear()} NeuroCare. All rights reserved.
       </div>
     </footer>
   );
