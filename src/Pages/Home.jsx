@@ -190,7 +190,7 @@ const Home = () => {
               className="group mb-4 transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 rounded-lg p-2"
             >
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-                How It Works
+                Our Services
               </h2>
             </button>
             <p className="text-gray-300 text-lg sm:text-xl max-w-md mx-auto">
