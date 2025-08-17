@@ -125,6 +125,11 @@ export default TeamSection;
  */
 
 import React, { useState } from "react";
+import Sriya from "../assets/sriya.jpg";
+import arvind from "../assets/arvind.jpg";
+import saumik from "../assets/saumik.jpg";
+import govinda from "../assets/govinda.jpg";
+import sruti from "../assets/sruti.jpg";
 
 const MemberCard = ({ image, name, designation }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -147,11 +152,12 @@ const MemberCard = ({ image, name, designation }) => {
 
       {/* Profile Image */}
       <div className="flex items-center justify-center h-full transform transition-transform duration-500 group-hover:-translate-y-1/5">
-        <img
-          src={image}
-          alt={name}
-          className="h-52 object-cover rounded-md m-1"
-        />
+      <img
+  src={image}
+  alt={name}
+  className="w-full h-full object-cover rounded-md"
+/>
+
       </div>
     </div>
   );
@@ -161,33 +167,33 @@ const TeamSection = () => {
   const teams = [
     {
       _id: 1,
-      image: "/team1.jpg",
-      name: "Alex Johnson",
-      designation: "VR Experience Designer",
+      image: arvind,
+      name: "Arvind Kumar Sahu",
+      designation: "XR Developer",
     },
     {
       _id: 2,
-      image: "/team2.jpg",
-      name: "Priya Sharma",
-      designation: "Software Developer",
+      image: sruti,
+      name: "Sruti Prusty",
+      designation: "Full Stack Developer",
     },
     {
       _id: 3,
-      image: "/team3.jpg",
-      name: "Michael Lee",
-      designation: "AI & Sensor Specialist",
+      image: govinda,
+      name: "Govinda Mahanti",
+      designation: "Full Stack Developer",
     },
     {
       _id: 4,
-      image: "/team4.jpg",
-      name: "Sara Patel",
-      designation: "Therapist & Wellness Coach",
+      image: Sriya,
+      name: "Sriya Reddy",
+      designation: "UI/UX Designer",
     },
     {
       _id: 5,
-      image: "/team5.png",
-      name: "David Kim",
-      designation: "Yoga Instructor",
+      image: saumik,
+      name: "Saumik Chakrabort",
+      designation: "AI Engineer",
     },
   ];
 

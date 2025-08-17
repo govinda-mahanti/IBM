@@ -99,10 +99,10 @@ const Home = () => {
       className="min-h-screen px-4 sm:px-6 lg:px-8 pt-[64px]"
       style={{ backgroundColor: "#2B2B2B" }}
     >
-      <section className="max-w-7xl mx-auto py-8 lg:py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center mx-8">
+      <section className="max-w-7xl mx-auto py-8 h-[calc(100vh-145px)] lg:py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center mx-8 md:mt-[100px]">
           {/* Left Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left ">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
               Discover to
               <br />
@@ -155,7 +155,7 @@ const Home = () => {
             <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl max-w-sm w-full">
               {/* NFT Image */}
               <img
-                src="./Image Placeholder.png"
+                src="https://i.pinimg.com/originals/66/50/05/665005423df126f6ef870ede0f58745d.gif"
                 alt="Space Walking NFT"
                 className="w-full h-80 object-cover"
               />
@@ -163,13 +163,13 @@ const Home = () => {
               {/* Card Info */}
               <div className="p-6">
                 <h3 className="text-white font-semibold text-xl mb-3">
-                  Space Walking
+                  Step into a World of Calm & Care
                 </h3>
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-gray-400 text-sm">AnimaKid</span>
+                  <span className="text-gray-400 text-sm">NeuroCare</span>
                 </div>
               </div>
             </div>

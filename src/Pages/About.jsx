@@ -1,5 +1,6 @@
 import React from "react";
 import TeamSection from "./Team";
+
 const About = () => {
   return (
     <div className="bg-[#2B2B2B] text-white min-h-screen px-6 lg:px-16 py-12 pt-[64px]">
@@ -7,64 +8,62 @@ const About = () => {
         {/* Heading */}
         <h1 className="text-4xl font-bold text-purple-400 mb-6">About Us</h1>
         <p className="text-lg leading-relaxed mb-10 text-gray-200">
-          At <span className="font-semibold text-purple-300">EMOTVR</span>, we
-          believe emotional well-being is just as important as physical health.
-          Our mission is to create a safe, immersive space where users can feel
-          understood, supported, and empowered to find peace of mind.
+          At <span className="font-semibold text-purple-300">NeuroCare</span>, 
+          we believe that mental wellness is just as essential as physical health. 
+          Our mission is to build a safe, immersive, and supportive space where 
+          people can overcome depression, anxiety, or emotional stress while 
+          finding balance, peace, and strength within themselves.
         </p>
 
         {/* Vision Section */}
         <section className="space-y-6">
           <p className="text-gray-200 leading-relaxed">
-            We’ve built a unique emotional support system that blends{" "}
+            We combine{" "}
+            <span className="text-purple-300 font-medium">AR, VR, and AI technologies</span>{" "}
+            with real-time{" "}
             <span className="text-purple-300 font-medium">
-              cutting-edge technology
-            </span>
-            with the warmth of human connection. Using real-time mood evaluation
-            through{" "}
-            <span className="text-purple-300 font-medium">
-              sensor data, blood flow patterns, and facial expression analysis
-            </span>
-            , EMOTVR understands how you’re truly feeling — even when words are
-            hard to find.
+              emotion sensing, biometric data, and facial expression analysis
+            </span>{" "}
+            to understand how users feel and provide personalized support tailored 
+            to their unique emotional state.
           </p>
 
           <p className="text-gray-200 leading-relaxed">
-            Once we know where you are emotionally, we offer{" "}
-            <span className="font-semibold text-purple-300">
-              four powerful pathways
-            </span>{" "}
-            to relaxation and healing:
+            Once your mood is recognized, NeuroCare guides you through{" "}
+            <span className="font-semibold text-purple-300">four core pathways</span>{" "}
+            for healing and relaxation:
           </p>
 
           {/* Four Pathways */}
           <ul className="list-disc list-inside space-y-3 text-gray-300">
             <li>
               <span className="text-purple-300 font-medium">
-                VR Environment with a Persona Partner:
+                Persona-based VR Environments:
               </span>{" "}
-              A lifelike companion who listens, responds, and shares moments
-              with you in a calming virtual world.
+              Choose a comforting persona like a sister, brother, parent, or friend 
+              who listens, understands, and interacts with you in an immersive 
+              virtual space.
             </li>
             <li>
               <span className="text-purple-300 font-medium">
-                Professional Psychiatrist Support:
+                Psychiatrist & Therapist Support:
               </span>{" "}
-              Connect instantly with licensed mental health professionals for
-              personalized guidance.
+              Access licensed psychiatrists and certified therapists who provide 
+              expert care and personalized sessions to address your mental health needs.
             </li>
             <li>
               <span className="text-purple-300 font-medium">
-                Certified Therapist Sessions:
+                Yoga & Mindfulness Practices:
               </span>{" "}
-              Engage in therapeutic practices that address stress, anxiety, and
-              emotional strain.
+              Engage in calming yoga, breathing, and mindfulness activities to 
+              restore emotional balance and reduce stress.
             </li>
             <li>
               <span className="text-purple-300 font-medium">
-                Yoga & Mindfulness:
+                AI-Driven Emotional Companionship:
               </span>{" "}
-              Step into peaceful sessions that nurture both body and mind.
+              An intelligent virtual companion who adapts to your mood, helping 
+              you express emotions freely and feel supported anytime.
             </li>
           </ul>
         </section>
@@ -74,22 +73,24 @@ const About = () => {
           <p className="text-gray-200 leading-relaxed">
             We are a{" "}
             <span className="font-semibold text-purple-300">
-              team of five passionate innovators
+              team of passionate innovators
             </span>
-            , each committed to making mental wellness more accessible,
-            personalized, and effective. Our vision is to harness{" "}
+            , working together to make mental healthcare more accessible, 
+            personalized, and effective. With{" "}
             <span className="text-purple-300 font-medium">
-              AI, VR, and biometric insights
-            </span>{" "}
-            to help people not just cope, but truly thrive.
+              AR, VR, AI, and biometric insights
+            </span>
+            , our vision is not just to help people cope with mental struggles 
+            but to empower them to truly heal and thrive.
           </p>
         </section>
         <TeamSection />
+
         {/* Closing Statement */}
         <section className="mt-10 border-t border-purple-800 pt-6">
           <p className="text-lg text-center text-purple-200 italic">
-            With EMOTVR, you’re never alone — your emotional partner is just a
-            breath, a glance, or a heartbeat away.
+            With NeuroCare, you’re never alone — your wellness partner is always 
+            ready to listen, guide, and help you recharge.
           </p>
         </section>
       </div>
