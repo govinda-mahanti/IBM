@@ -7,10 +7,10 @@ const About = () => {
         {/* Heading */}
         <h1 className="text-4xl font-bold text-purple-400 mb-6">About Us</h1>
         <p className="text-lg leading-relaxed mb-10 text-gray-200">
-          At <span className="font-semibold text-purple-300">EMOTVR</span>, we
-          believe emotional well-being is just as important as physical health.
-          Our mission is to create a safe, immersive space where users can feel
-          understood, supported, and empowered to find peace of mind.
+          At <span className="font-semibold text-purple-300">NeuroCare</span>,
+          we believe emotional well-being is just as important as physical
+          health. Our mission is to create a safe, immersive space where users
+          can feel understood, supported, and empowered to find peace of mind.
         </p>
 
         {/* Vision Section */}
@@ -25,8 +25,8 @@ const About = () => {
             <span className="text-purple-300 font-medium">
               sensor data, blood flow patterns, and facial expression analysis
             </span>
-            , EMOTVR understands how you’re truly feeling — even when words are
-            hard to find.
+            , NeuroCare understands how you’re truly feeling — even when words
+            are hard to find.
           </p>
 
           <p className="text-gray-200 leading-relaxed">
@@ -88,8 +88,8 @@ const About = () => {
         {/* Closing Statement */}
         <section className="mt-10 border-t border-purple-800 pt-6">
           <p className="text-lg text-center text-purple-200 italic">
-            With EMOTVR, you’re never alone — your emotional partner is just a
-            breath, a glance, or a heartbeat away.
+            With NeuroCare, you’re never alone — your emotional partner is just
+            a breath, a glance, or a heartbeat away.
           </p>
         </section>
       </div>

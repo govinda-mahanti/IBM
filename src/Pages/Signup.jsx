@@ -208,8 +208,7 @@ const countries = [
 const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-    const [loading, setLoading] = useState(false); 
-
+  const [loading, setLoading] = useState(false);
 
   // 👇 aligned with backend fields
   const [signupData, setSignupData] = useState({
@@ -228,8 +227,7 @@ const Signup = () => {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
-        setLoading(true);
-
+    setLoading(true);
 
     try {
       const { data } = await axios.post(`${BASE_URL}/auth/signup`, signupData);
@@ -237,7 +235,7 @@ const Signup = () => {
       dispatch(setCredentials({ user: data, token: data.token }));
 
       alert("Signup successful!");
-        navigate("/");
+      navigate("/");
     } catch (error) {
       console.error(error);
       alert(
@@ -248,10 +246,10 @@ const Signup = () => {
 
   return (
     <div
-      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center "
+      className="min-h-screen px-4 sm:px-6 lg:px-8 justify-center flex items-center"
       style={{ backgroundColor: "#2B2B2B" }}
     >
-      <div className="w-full max-w-md m-4">
+      <div className="w-full max-w-md mt-16 mb-4">
         <div className="bg-white dark:bg-[#1d1d1d] rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-8">
             <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white mb-2">
@@ -348,9 +346,9 @@ const Signup = () => {
               />
 
               {/* Submit */}
-               <button
+              <button
                 type="submit"
-                disabled={loading} 
+                disabled={loading}
                 className={`w-full font-bold py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-transform transform ${
                   loading
                     ? "bg-gray-400 cursor-not-allowed"
