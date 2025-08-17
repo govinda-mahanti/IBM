@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-
-// To use these icons, you would typically install a library like lucide-react:
-// npm install lucide-react
 import {
   User,
   Mail,
@@ -14,8 +11,9 @@ import {
   Leaf,
   BrainCircuit,
 } from "lucide-react";
-
-// --- Mock Data ---
+import { useDispatch } from "react-redux";
+import { logOut } from "../redux/authSlice";
+import { useNavigate } from "react-router-dom";
 const initialUserData = {
   name: "Alex Doe",
   email: "alex.doe@example.com",
@@ -77,7 +75,6 @@ const plans = [
   },
 ];
 
-// --- Sub-components ---
 
 const UserDetails = ({ userData, setUserData }) => {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -205,7 +202,6 @@ const SessionHistory = () => {
     }
   };
 
-  // Calculate the count of each session type
   const sessionCounts = sessionHistoryData.reduce((acc, session) => {
     acc[session.service] = (acc[session.service] || 0) + 1;
     return acc;
@@ -316,9 +312,15 @@ const SubscriptionPlans = () => {
 const Profile = () => {
   const [userData, setUserData] = useState(initialUserData);
 
+ const dispatch = useDispatch();
+ const navigate = useNavigate();
+
   const handleLogout = () => {
+    dispatch(logOut());
+    navigate("/");
     console.log("User logged out");
   };
+
 
   return (
     <div className="bg-gray-900 text-gray-200 min-h-screen p-4 sm:p-6 lg:p-8 font-sans pt-[640px]">
